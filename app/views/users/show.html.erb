@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><% provide(:title, @user.name)%> </title>
+  <meta charset="utf-8">
+  <div class="row">
+  	<aside class="col-md-4">
+  		<section class="user_info">
+  			<h1>
+  				<% @user.name %>
+  			</h1>
+  		</section>
+  	</aside>
+  </div>
+  <style>
+    body{
+      background-image: url("C:/sites/workspace/APPChloe/app/assets/images/mainbackground_pic.jpg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+<%= @user.name %>, <%= @user.email %>
+</body>
+</html>
