@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-  	@users = User.all
+  	if params[:status] == "activated"
+  		@users = user.activated
+  	else
+  		@users = user.inactivated
+  	end
   end
 
 
@@ -11,8 +15,8 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params[:user])
-  	if @user.
-  		redirect_to user_url(@user)
+  	if @user.save
+  		redirect_to @user
   	else
   		render 'new'
   	end	
